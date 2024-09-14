@@ -4,6 +4,9 @@
 echo "แก้ไขไฟล์ /etc/ssh/sshd_config เพื่อให้ root สามารถเข้าสู่ระบบได้"
 sudo sed -i 's/^#PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
 sudo sed -i 's/^#PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sudo sed -i 's/^#Banner .*/Banner /etc/issue.net/' /etc/ssh/sshd_config
+
+Banner /etc/issue.net
 
 # แก้ไข Banner
 echo "แก้ไขไฟล์ /etc/issue.net"
