@@ -59,3 +59,25 @@ curl -fsSL https://code-server.dev/install.sh | sh
 ```
 ## Visual Studio Code Server
 https://code.visualstudio.com/blogs/2022/07/07/vscode-server
+Install the VS Code Server on your remote machine (or wherever you want to develop against).
+
+Note: There are different install commands for different remote architectures, which you can review in the server documentation. This post will set up the VS Code Server in a Windows Subsystem for Linux (WSL) instance, which provides a true, isolated Linux environment on Windows and can serve as our "remote", isolated machine.
+
+Run the following command in a WSL terminal:
+```bash
+wget -O- https://aka.ms/install-vscode-server/setup.sh | sh
+```
+Start the VS Code Server by running the following command in your WSL terminal :
+```bash
+code-server
+```
+You'll be provided a device code and URL to authenticate your GitHub account into the VS Code Server's secure tunneling service.
+```bash
+Please enter the code 7644-1186 on https://github.com/login/device
+```
+Authenticate into the tunneling service by entering the device code at the provided auth URL.
+
+If this is your first time launching the VS Code Server from this WSL instance, you'll be prompted to enter a name for your connection. The CLI will suggest a fun default "adjective-noun" name (examples shown below), which you can choose to accept too.
+```bash
+? What would you like to call this machine? (elegant-pitta) >
+```
